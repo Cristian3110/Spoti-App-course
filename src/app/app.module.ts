@@ -7,9 +7,13 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArtistaComponent } from './components/artista/artista.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
-import { ROUTES } from './app.routes';
 
 // Importar RUTAS
+import { ROUTES } from './app.routes';
+
+// Importando los SERVICIOS
+import { SpotifyService } from './services/spotify.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,8 +23,12 @@ import { ROUTES } from './app.routes';
     ArtistaComponent,
     NavbarComponent,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(ROUTES, { useHash: true })],
-  providers: [],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot(ROUTES, { useHash: true }),
+  ],
+  providers: [SpotifyService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
