@@ -13,15 +13,17 @@ export class SpotifyService {
     const headers = new HttpHeaders({
       // aqui voy a  especificar todos los token de la API
       Authorization:
-        'Bearer BQBBJT_pbZT83cP6TrFQJHhNCbWdLy8JasJSjI6Wz3hlJ5fNusyokeocAWddYKFe0xyLzaBK9DaKLW4_YjE',
+        'Bearer BQAkbOBufU73-oPTeZnMZ5wYhxDEYDR8T-FCSVGDBnw5E_uhmuPSYXIvdLmkm-IcvHKhuhCRdZCtIW6MUnc',
     });
 
-    this.http
-      .get('https://api.spotify.com/v1/browse/new-releases?limit=20', {
+    return this.http.get(
+      'https://api.spotify.com/v1/browse/new-releases?limit=20',
+      {
         headers,
-      })
-      .subscribe((data) => {
-        console.log(data);
-      });
+      }
+    );
+    // .subscribe((data) => {
+    //   console.log(data);
+    // });
   }
 }
