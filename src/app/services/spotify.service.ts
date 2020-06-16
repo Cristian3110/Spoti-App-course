@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+// Los observables vienen del rxjs operators
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -22,11 +23,7 @@ export class SpotifyService {
       .get('https://api.spotify.com/v1/browse/new-releases?limit=20', {
         headers,
       })
-      .pipe(
-        map((data) => {
-          return data['albums'].items;
-        })
-      );
+      .pipe(map((data) => data['albums'].items));
     // .subscribe((data) => {
     //   console.log(data);
     // });
