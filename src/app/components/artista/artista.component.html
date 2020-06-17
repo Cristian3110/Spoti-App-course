@@ -18,3 +18,31 @@
     </button>
   </div>
 </div>
+
+<div class="row">
+  <div class="col">
+    <table class="table m-3 center">
+      <thead>
+        <tr class="colors text-white">
+          <th>Foto</th>
+          <th>Album</th>
+          <th>Canción</th>
+          <th>Vista Previa</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let track of topTracks" class="colors text-white">
+          <td>
+            <img [src]="track.album.images | noimage" class="img-thumb" />
+          </td>
+          <td>{{ track.album.name }}</td>
+          <td>{{ track.name }}</td>
+          <td>
+            <audio [src]="track.preview_url" controls></audio>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
