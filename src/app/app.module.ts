@@ -8,6 +8,7 @@ import { SearchComponent } from './components/search/search.component';
 import { ArtistaComponent } from './components/artista/artista.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 // Importar RUTAS
 import { ROUTES } from './app.routes';
@@ -29,6 +30,7 @@ import { NoimagePipe } from './pipes/noimage.pipe';
     NavbarComponent,
     NoimagePipe,
     TarjetasComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
