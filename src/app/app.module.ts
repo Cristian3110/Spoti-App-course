@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArtistaComponent } from './components/artista/artista.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 
 // Importar RUTAS
 import { ROUTES } from './app.routes';
@@ -18,7 +19,6 @@ import { HttpClientModule } from '@angular/common/http';
 // Pipes
 
 import { NoimagePipe } from './pipes/noimage.pipe';
-import { LoadingComponent } from './components/shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     ArtistaComponent,
     NavbarComponent,
     NoimagePipe,
-    LoadingComponent,
+    TarjetasComponent,
   ],
   imports: [
     BrowserModule,
