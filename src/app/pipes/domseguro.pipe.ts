@@ -7,7 +7,9 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class DomseguroPipe implements PipeTransform {
   constructor(private domSanitizer: DomSanitizer) {}
 
-  transform(value: string, url: string): any {
+  transform(value: string): any {
+    // colocando el url aqui
+    const url = 'https://open.spotify.com/embed?uri=';
     return this.domSanitizer.bypassSecurityTrustResourceUrl(url + value);
   }
 }

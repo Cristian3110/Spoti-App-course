@@ -41,9 +41,7 @@
           <td>
             <!-- <audio [src]="track.preview_url" controls></audio> -->
             <iframe
-              [src]="
-                track.uri | domseguro: 'https://open.spotify.com/embed?uri='
-              "
+              [src]="track.uri | domseguro"
               width="300"
               height="80"
               frameborder="0"
