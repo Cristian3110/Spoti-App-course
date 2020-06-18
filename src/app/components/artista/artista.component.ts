@@ -13,6 +13,7 @@ export class ArtistaComponent {
 
   constructor(private router: ActivatedRoute, private spotify: SpotifyService) {
     // this.loadingArtista = true;
+
     this.router.params.subscribe((params) => {
       this.getArtista(params['id']);
       this.getTopTracks(params['id']);
