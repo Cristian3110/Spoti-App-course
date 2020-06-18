@@ -18,7 +18,7 @@ export class SpotifyService {
     const headers = new HttpHeaders({
       // aqui voy a  especificar todos los token de la API
       Authorization:
-        'Bearer BQBsr16bFBarYzQUX9iY_yUFL_yE-7KZtr0B4Ffs3Xk_YsRCNkKOwh0HTf9C5JbzLIo4FfcGVVyLfzZBwEA',
+        'Bearer BQCwoN1N4hfpGIhjIPdibCBtG3511uOAm4k0cQsiW8YYpkGRFuccFqpjpz4Xkn-qg8vWAPWJxTYSOkdv62E',
     });
 
     return this.http.get(url, { headers });
