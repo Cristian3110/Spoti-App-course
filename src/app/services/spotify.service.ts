@@ -18,54 +18,25 @@ export class SpotifyService {
     const headers = new HttpHeaders({
       // aqui voy a  especificar todos los token de la API
       Authorization:
-        'Bearer BQCwoN1N4hfpGIhjIPdibCBtG3511uOAm4k0cQsiW8YYpkGRFuccFqpjpz4Xkn-qg8vWAPWJxTYSOkdv62E',
+        'Bearer BQDQjUsIkcUjOeAaAcZ8Jfu_Kr9pvpnDKFp9zPcmqlHAobXNerMrlbi1DCjdQFJkckJDiDuTqvwN2c2BEB8',
     });
 
     return this.http.get(url, { headers });
   }
 
   getNewRelease() {
-    // const headers = new HttpHeaders({
-    //   // aqui voy a  especificar todos los token de la API
-    //   Authorization:
-    //     'Bearer BQBxVlqBlclH1hgKNitFvLFfaV4WG7VqV-TZXgwtPRpmInmFg6gj9BBTygt1tcBcDZoVXnslz9RHJlGiQEw',
-    // });
-
     return this.getQuery('browse/new-releases?limit=20').pipe(
       map((data) => data['albums'].items)
     );
-
-    // this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=20', {
-    //   headers,
-    // });
-    // .subscribe((data) => {
-    //   console.log(data);
-    // });
   }
   getArtistas(termino: string) {
-    // const headers = new HttpHeaders({
-    //   // aqui voy a  especificar todos los token de la API
-    //   Authorization:
-    //     'Bearer BQBxVlqBlclH1hgKNitFvLFfaV4WG7VqV-TZXgwtPRpmInmFg6gj9BBTygt1tcBcDZoVXnslz9RHJlGiQEw',
-    // });
-
     return this.getQuery(`search?q=${termino}&type=artist&limit=15`).pipe(
       map((data) => data['artists'].items)
     );
   }
 
-  // this.http
-  //   .get(
-  //     `https://api.spotify.com/v1/search?q=${termino}&type=artist&limit=15`,
-  //     {
-  //       headers,
-  //     }
-  //   )
-
   getArtista(id: string) {
     return this.getQuery(`artists/${id}`);
-    // //.//pipe(map((data) => data['artists'].items)
-    // );
   }
 
   getTopTracks(id: string) {
